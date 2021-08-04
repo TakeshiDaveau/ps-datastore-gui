@@ -1,4 +1,4 @@
-# PS Datastore DSUI
+# PS Datastore GUI
 
 This repo allows you to install a GUI to visualize the data stored in your local emulated datastore
 
