@@ -24,6 +24,7 @@ echo "$(gcloud beta emulators datastore env-init)" > .env
 ### Launch
 
 ```bash
+gcloud beta emulators datastore start
 docker-compose up -d
 ```
 
@@ -32,3 +33,5 @@ Then you can access to the GUI by visiting <http://localhost:3000>
 ## Troubleshooting
 
 To verify that the JRE is well installed `java -version` if you hav an error message "command not found: java", you need to update your .zshrc or .bashrc file to update the `PATH` variable and add the path where java is installed.
+
+If you do not have a datastore configured you can do `gcloud config set project <datastore-name>`
