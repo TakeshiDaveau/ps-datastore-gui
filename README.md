@@ -14,12 +14,21 @@ This repo allows you to install a GUI to visualize the data stored in your local
 
 ### Environment
 
-You must edit `docker-compose.yml` file by setting the `DATASTORE_LISTEN_ADDRESS` and `DATASTORE_PROJECT_ID` provided by the datastore emulator.
+Set up your envfile :
 
-## Launch
+```bash
+echo "$(gcloud beta emulators datastore env-init)" > .env
+```
+
+
+### Launch
 
 ```bash
 docker-compose up -d
 ```
 
 Then you can access to the GUI by visiting <http://localhost:3000>
+
+## Troubleshooting
+
+To verify that the JRE is well installed `java -version` if you hav an error message "command not found: java", you need to update your .zshrc or .bashrc file to update the `PATH` variable and add the path where java is installed.
