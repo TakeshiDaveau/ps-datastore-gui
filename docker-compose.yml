@@ -9,4 +9,4 @@ services:
       - DATASTORE_LISTEN_ADDRESS=${DATASTORE_EMULATOR_HOST}
     ports:
       - "8081:8081"
-      - "3000:3000"
+      - "${GUI_PORT:-3000}:3000"

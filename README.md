@@ -20,7 +20,6 @@ Set up your envfile :
 echo "$(gcloud beta emulators datastore env-init)" > .env
 ```
 
-
 ### Launch
 
 ```bash
@@ -29,6 +28,16 @@ docker-compose up -d
 ```
 
 Then you can access to the GUI by visiting <http://localhost:3000>
+
+## Configuration
+
+### Change GUI port
+
+Add in .env:
+
+```bash
+GUI_PORT=1234
+```
 
 ## Troubleshooting
 
