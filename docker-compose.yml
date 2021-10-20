@@ -2,11 +2,20 @@ version: "3"
 
 services:
   datastore-dsui:
+    container_name: datastore
     restart: always
-    image: joemugen/datastore-dsui
-    environment:
-      - DATASTORE_PROJECT_ID=${DATASTORE_PROJECT_ID}
-      - DATASTORE_LISTEN_ADDRESS=${DATASTORE_EMULATOR_HOST}
+    # image: joemugen/datastore-dsui
+    build:
+      context: ""
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - ./imports:/opt/imports
+      - ./datas:/opt/data
     ports:
-      - "8081:8081"
-      - "${GUI_PORT:-3000}:3000"
+      - "${DATASTORE_PORT:-8081}:${DATASTORE_PORT:-8081}"
+      - "${GUI_PORT:-3000}:${GUI_PORT:-3000}"
+volumes:
+  imports:
+  datas:
