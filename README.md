@@ -19,6 +19,19 @@ Then by default, you can access to the GUI by visiting <http://localhost:3000>
 
 ## Configuration
 
+### Default configuration
+
+If you don't create a .env file, default env is :
+
+```bash
+DATASTORE_PROJECT_ID=project-test
+
+DATASTORE_PORT=8081
+DATASTORE_LISTEN_ADDRESS=0.0.0.0:8081
+
+GUI_PORT=3000
+```
+
 ### Change GUI port
 
 Add in .env:
@@ -29,10 +42,12 @@ GUI_PORT=1234
 
 ### Change Datastore port
 
+You need to set same port on
+
 Add in .env:
 
 ```bash
-DATASTORE_LISTEN_ADDRESS="localhost:4321"
+DATASTORE_LISTEN_ADDRESS="0.0.0.0:4321"
 DATASTORE_PORT=4321
 ```
 
